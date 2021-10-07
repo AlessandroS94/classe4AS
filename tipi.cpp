@@ -18,6 +18,12 @@ int main (){
     bool b;
     b = true;
 
+    char ch = 'h';
+
+    // printing the  variable
+    cout << "Character = " << ch << endl;
+
+
     cout << "" << sizeof(int) <<endl;
     string stringa;
     cout<<"ciao";
