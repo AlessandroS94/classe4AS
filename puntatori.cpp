@@ -13,4 +13,5 @@ int main(){
     cout<< pnum << endl;
     cout<< "indirizzo di pnum:";
     cout<<&pnum << endl;
+    return 0;
 }

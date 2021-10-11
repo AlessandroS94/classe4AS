@@ -7,6 +7,7 @@ int pot_ricorsivo_semplice(int base, int esp);
 int main(){
     cout<<" La potenza di "<<5<<" alla ^3";
     cout<<" è \n"<<pot_ricorsivo_semplice(5, 3)<<endl;
+    return 0;
 }
 
 int pot_ricorsivo_semplice(int base, int esp)
