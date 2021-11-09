@@ -2,8 +2,8 @@
 
 using namespace std;
 
-int main(){
-    int vettore[10];
+void matrici_esec(){
+     int vettore[10];
     int max = 10;
     int numero;
     cout<<"INSERISCI UN ARRAY DI NUMERI NON NEGATIVI DI MAX 10 ELEMENTI\n";
@@ -30,6 +30,9 @@ int main(){
     }
     cout<<"FINE"<<endl;
     
+}
 
-
+int main(){
+    matrici_esec();
+   return 0;
 }
