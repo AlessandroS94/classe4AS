@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 class Libri
@@ -11,13 +12,14 @@ private:
     void setNumeroPagine(int pagine);
     void setCapitoli(int capitoli);
     void setTitolo(string nome);
+
 public:
     void getNumeroPagine();
     void getCapitoli();
     void getTitolo();
     int calcolaMediaPagineCapitolo();
     Libri();
-    Libri(int numeroPagine,int capitoli,string titolo);
+    Libri(int numeroPagine, int capitoli, string titolo);
     ~Libri();
 };
 
@@ -27,35 +29,57 @@ Libri::Libri()
     capitoli = 10;
     titolo = "Programma in C++";
 }
-Libri::Libri(int numeroPagineVal,int capitoliVal,string titoloVal)
+Libri::Libri(int numeroPagineVal, int capitoliVal, string titoloVal)
 {
     setNumeroPagine(numeroPagineVal);
     setCapitoli(capitoliVal);
     setTitolo(titoloVal);
 }
-void Libri::setNumeroPagine(int pagine){
-    if(pagine)
-       { numeroPagine = pagine;}
+void Libri::setNumeroPagine(int pagine)
+{
+    if (pagine)
+    {
+        numeroPagine = pagine;
+    }
     else
-        {numeroPagine = 100;}
-    
+    {
+        numeroPagine = 100;
+    }
 }
-void Libri::setCapitoli(int capitoli){
-    if(capitoli)
-        {capitoli = capitoli;}
+void Libri::setCapitoli(int capitoli)
+{
+    if (capitoli)
+    {
+        capitoli = capitoli;
+    }
     else
-        {capitoli = 10;}
+    {
+        capitoli = 10;
+    }
 }
-void Libri::setTitolo(string nome){
-    if(!nome.empty())
-        {titolo = nome;}
+void Libri::setTitolo(string nome)
+{
+    if (!nome.empty())
+    {
+        titolo = nome;
+    }
     else
-       {titolo = "Programma in C++";} 
+    {
+        titolo = "Programma in C++";
+    }
 }
-int Libri::calcolaMediaPagineCapitolo(){
-    return (numeroPagine/capitoli);
-}
+void Libri::getCapitoli() { cout << capitoli << endl; }
 
+void Libri::getTitolo() { cout << titolo << endl; }
+
+int Libri::calcolaMediaPagineCapitolo()
+{
+    return (numeroPagine / capitoli);
+}
+void Libri::getNumeroPagine()
+{
+    cout << numeroPagine << endl;
+}
 Libri::~Libri()
 {
 }
@@ -63,7 +87,9 @@ Libri::~Libri()
 int main()
 {
     Libri libro;
-    cout<< "Pagine per capito: \t"<<libro.calcolaMediaPagineCapitolo()<<endl;
+    cout << "Pagine per capitolo: \t" << libro.calcolaMediaPagineCapitolo() << "\n";
+    libro.getTitolo();
+    libro.getNumeroPagine();
+    libro.getCapitoli();
     Libri libro2;
-    
 }
