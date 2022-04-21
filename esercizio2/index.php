@@ -34,7 +34,7 @@
   <div class="row mb-3">
     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
-      <input type="email" name="email" class="form-control" id="inputEmail3">
+      <input type="text" name="email" class="form-control" id="inputEmail3">
     </div>
   </div>
   <button type="submit" class="btn btn-primary">test</button>
@@ -53,6 +53,7 @@ function somma($a, $b) {
 $somma = somma(3,5); // $somma sarà uguale ad 8
 echo($somma);
 ?>
+<a class="nav-link <?php if(isset($_GET['page'])){if($_GET['page']=='fetures')echo('active');}?>"  href="index.php?page=fetures">Features</a>
 
     
   </body>

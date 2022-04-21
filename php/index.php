@@ -1,47 +1,60 @@
-<?php
-
-//example 
-//come si dichiara una variabile php
-$esempio = 'ciao';
-$esempio2 = 2;
-//come si dichiara un array
-$arrayEsempio = [["ciao"]["pippo"]["pluto"]["paperino"]];
-echo ('
 <!doctype html>
-<html lang="it">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<html lang="it" class="h-100">
+  <head>
+    
+    <title>examples</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-
-<body>
-    <div class="px-4 py-5 my-5 text-center">
-        <img class="d-block mx-auto mb-4" src="/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-        <h1 class="display-5 fw-bold">Centered hero</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s
-                most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
-                extensive prebuilt components, and powerful JavaScript plugins.</p>
-            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
-                <button type="button" class="btn btn-outline-secondary btn-lg px-4">Secondary</button>
-            </div>
-        </div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-white bg-dark">
+    
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="mb-auto">
+    <div>
+      <h3 class="float-md-start mb-0">Cover</h3>
+      <nav class="nav nav-masthead justify-content-center float-md-end">
+        <a class="nav-link <?php if(!isset($_GET['page']))echo('active');?>"  aria-current="page" href="#">Home</a>
+        <a class="nav-link <?php if(isset($_GET['page'])){if($_GET['page']=='fetures')echo('active');}?>"  href="index.php?page=fetures">Features</a>
+        <a class="nav-link <?php if(isset($_GET['page'])){if($_GET['page']=='contact')echo('active');}?>" href="index.php?page=contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-</body>
+  <main class="px-3">
+    <h1>
+      <?php 
+        if(isset($_POST['email'])){
+          echo($_POST['email']);
+        }
+        ?>
+    </h1>
+  <form action="index.php" method="post">
+  <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" name="email" class="form-control" id="inputEmail3">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">test</button>
+</form>
+  </main>
 
+  <footer class="mt-auto text-white-50">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </footer>
+</div>
+<?php
+function somma($a, $b) {
+    $somma = $a + $b;
+    return $somma;
+}
+$somma = somma(3,5); // $somma sarà uguale ad 8
+echo($somma);
+?>
+<a class="nav-link <?php if(isset($_GET['page'])){if($_GET['page']=='fetures')echo('active');}?>"  href="index.php?page=fetures">Features</a>
+
+    
+  </body>
 </html>
-    ');
